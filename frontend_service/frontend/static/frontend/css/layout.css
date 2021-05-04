@@ -1,0 +1,11 @@
+.messages-wrapper {
+    position: fixed;
+    top: 6rem;
+}
+.messages-wrapper .alert.alert-dismissible {
+    box-shadow: 0px 3px 2px #0000006e;
+}
+.messages-wrapper .alert-error {
+    background-color: #ad2c2b;
+    color: #ffffff;
+}

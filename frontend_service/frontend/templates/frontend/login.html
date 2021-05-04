@@ -1,0 +1,66 @@
+{% extends 'frontend/layout.html' %}
+
+{% load static %}
+{% load form_field %}
+
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'frontend/css/form.css' %}">
+{% endblock CSS %}
+
+{% block Main %}
+<form action="" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="row mx-0 justify-content-center">
+    <div class="col-6 text-center">
+      <h1 class="title">Login</h1>
+    </div>
+    <!-- line break -->
+    <div class="w-100"></div>
+    <!-- EMAIL -->
+    <div class="input-section-wrapper col-6 mx-0 my-2">
+      <!-- label -->
+      {% form_field form.email.label class="form-control-label" %}
+      <!-- invalid -->
+      {% if form.email.errors %}
+      {% form_field form.email class="form-control is-invalid" %}
+      <!-- render errors -->
+      {% for error in form.email.errors %}
+      <span class="text-danger"> {{error}} </span>
+      {% endfor %}
+      <!-- valid -->
+      {% else %}
+      {% form_field form.email class="form-control" %}
+      {% endif %}
+    </div>
+    <!-- PASSWORD -->
+    <div class="input-section-wrapper col-6 mx-0 my-2">
+      <!-- label -->
+      {% form_field form.password.label class="form-control-label" %}
+      <!-- invalid -->
+      {% if form.password.errors %}
+        {% form_field form.password class="form-control is-invalid" %}
+      <!-- render errors -->
+      {% for error in form.password.errors %}
+        <span class="text-danger"> {{error}} </span>
+      {% endfor %}
+      <!-- valid -->
+      {% else %}
+        {% form_field form.password class="form-control" %}
+      {% endif %}
+    </div>
+    <!-- SUMBIT -->
+      <div class="input-section-wrapper col-12 mx-0 my-2">
+        <div class="row mx-0 justify-content-center align-items-center">
+          <div class="col-6 col-md-4">
+            {% form_field form.submit class="form-control btn btn-dark" %}
+          </div>
+        </div>
+      </div>
+  </div>
+</form>
+{% endblock Main %}
+
+
+
+
+

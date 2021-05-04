@@ -1,0 +1,176 @@
+{% extends 'frontend/layout.html' %}
+{% load static %}
+{% load form_field %}
+
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'frontend/css/form.css' %}">
+{% endblock CSS %}
+
+{% block Main %}
+
+
+<form action="" enctype="multipart/form-data" , method="POST">
+  <!-- form security -->
+  {% csrf_token %} 
+  <div class="row mx-0 justify-content-center">
+    <div class="col-6 text-center">
+      <h1 class="title">Register</h1>
+    </div>
+    <!-- line break -->
+    <div class="w-100"></div>
+    <!-- FIRST NAME -->
+    <div class="input-section-wrapper col-6 mx-0 my-2">
+      <!-- label -->
+      {% form_field form.first.label class="form-control-label" %}
+      <!-- invalid -->
+      {% if form.first.errors %}
+        {% form_field form.first class="form-control is-invalid" %}
+      <!-- render errors -->
+      {% for error in form.first.errors %}
+        <span class="text-danger"> {{error}} </span>
+      {% endfor %}
+      <!-- valid -->
+      {% else %}
+        {% form_field form.first class="form-control" %}
+      {% endif %}
+    </div>
+    <!-- LAST NAME -->
+    <div class="input-section-wrapper col-6 mx-0 my-2">
+      <!-- label -->
+      {% form_field form.last.label class="form-control-label" %}
+      <!-- invalid -->
+      {% if form.last.errors %}
+        {% form_field form.last class="form-control is-invalid" %}
+      <!-- render errors -->
+      {% for error in form.last.errors %}
+        <span class="text-danger"> {{error}} </span>
+      {% endfor %}
+      <!-- valid -->
+      {% else %}
+        {% form_field form.last class="form-control" %}
+      {% endif %}
+    </div>
+    <!-- EMAIL -->
+    <div class="input-section-wrapper col-6 mx-0 my-2">
+      <!-- label -->
+      {% form_field form.email.label class="form-control-label" %}
+      <!-- invalid -->
+      {% if form.email.errors %}
+        {% form_field form.email class="form-control is-invalid" %}
+      <!-- render errors -->
+      {% for error in form.email.errors %}
+        <span class="text-danger"> {{error}} </span>
+      {% endfor %}
+      <!-- valid -->
+      {% else %}
+        {% form_field form.email class="form-control" %}
+      {% endif %}
+    </div>
+    <!-- PHONE -->
+    <div class="input-section-wrapper col-6 mx-0 my-2">
+      <!-- label -->
+      {% form_field form.phone.label class="form-control-label" %}
+      <!-- invalid -->
+      {% if form.phone.errors %}
+        {% form_field form.phone class="form-control is-invalid" %}
+      <!-- render errors -->
+      {% for error in form.phone.errors %}
+        <span class="text-danger"> {{error}} </span>
+      {% endfor %}
+      <!-- valid -->
+      {% else %}
+        {% form_field form.phone class="form-control" %}
+      {% endif %}
+    </div>
+    <!-- ADDRESS -->
+    <div class="input-section-wrapper col-12 mx-0 my-2">
+      <!-- label -->
+      {% form_field form.address.label class="form-control-label" %}
+      <!-- invalid -->
+      {% if form.address.errors %}
+        {% form_field form.address class="form-control is-invalid" %}
+      <!-- render errors -->
+      {% for error in form.address.errors %}
+        <span class="text-danger"> {{error}} </span>
+      {% endfor %}
+      <!-- valid -->
+      {% else %}
+        {% form_field form.address class="form-control" %}
+      {% endif %}
+    </div>
+    <!-- ZIP CODE -->
+    <div class="input-section-wrapper col-6 mx-0 my-2">
+      <!-- label -->
+      {% form_field form.zip_code.label class="form-control-label" %}
+      <!-- invalid -->
+      {% if form.zip_code.errors %}
+        {% form_field form.zip_code class="form-control is-invalid" %}
+      <!-- render errors -->
+      {% for error in form.zip_code.errors %}
+        <span class="text-danger"> {{error}} </span>
+      {% endfor %}
+      <!-- valid -->
+      {% else %}
+        {% form_field form.zip_code class="form-control" %}
+      {% endif %}
+    </div>
+    <!-- COUNTRY -->
+    <div class="input-section-wrapper col-6 mx-0 my-2">
+      <!-- label -->
+      {% form_field form.country.label class="form-control-label" %}
+      <!-- invalid -->
+      {% if form.country.errors %}
+        {% form_field form.country class="form-control is-invalid" %}
+      <!-- render errors -->
+      {% for error in form.country.errors %}
+        <span class="text-danger"> {{error}} </span>
+      {% endfor %}
+      <!-- valid -->
+      {% else %}
+        {% form_field form.country class="form-control" %}
+      {% endif %}
+    </div>
+    <!-- PASSWORD -->
+    <div class="input-section-wrapper col-6 mx-0 my-2">
+      <!-- label -->
+      {% form_field form.password.label class="form-control-label" %}
+      <!-- invalid -->
+      {% if form.password.errors %}
+        {% form_field form.password class="form-control is-invalid" %}
+      <!-- render errors -->
+      {% for error in form.password.errors %}
+        <span class="text-danger"> {{error}} </span>
+      {% endfor %}
+      <!-- valid -->
+      {% else %}
+        {% form_field form.password class="form-control" %}
+      {% endif %}
+    </div>
+    <!-- CONFIRM -->
+    <div class="input-section-wrapper col-6 mx-0 my-2">
+      <!-- label -->
+      {% form_field form.confirm.label class="form-control-label" %}
+      <!-- invalid -->
+      {% if form.confirm.errors %}
+        {% form_field form.confirm class="form-control is-invalid" %}
+      <!-- render errors -->
+      {% for error in form.confirm.errors %}
+        <span class="text-danger"> {{error}} </span>
+      {% endfor %}
+      <!-- valid -->
+      {% else %}
+        {% form_field form.confirm class="form-control" %}
+      {% endif %}
+    </div>
+    <!-- SUMBIT -->
+    <div class="input-section-wrapper col-12 mx-0 my-2">
+      <div class="row mx-0 justify-content-center align-items-center">
+        <div class="col-6 col-md-4">
+          {% form_field form.submit class="form-control btn btn-dark" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock Main %}

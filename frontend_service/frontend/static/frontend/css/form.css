@@ -1,0 +1,55 @@
+form {
+    padding: 2rem 0.5rem;
+    box-shadow: 1px 3px 6px 0px #000000ad;
+}
+form .title {
+
+    text-shadow: 1px 3px 4px #00000082;
+}
+form label {
+    font-size: 0.75rem;
+    color: gray;
+}
+form .input-section-wrapper {
+    padding: 0 0.2rem;
+}
+form .input-section-wrapper .btn-dark {
+    border-radius: 0;
+}
+form .input-section-wrapper .btn-dark:hover,
+form .input-section-wrapper .btn-dark:focus {
+    box-shadow: 1px 3px 3px 0px #000000ad;
+    transition: all .1s;
+}
+form .input-section-wrapper .btn-dark:active {
+    box-shadow: none;
+    transition: all 0s;
+}
+form span.text-danger {
+    font-size: 0.7rem;
+}
+
+@media (min-width: 768px) {
+    form .input-section-wrapper {
+        padding: 0 1rem;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+    form {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (min-width: 1900px) {
+    .form-outer-wrapper {
+        flex: 0 0 auto;
+        width: 35%;
+    }
+}
+
